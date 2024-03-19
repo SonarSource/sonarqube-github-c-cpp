@@ -46,6 +46,6 @@ jobs:
           gh pr list
 
           if [[ $(gh pr list -H "${UPDATE_BRANCH}" | grep "${UPDATE_BRANCH}" | wc -l) -eq 0 ]]; then
-            gh pr create -B main -H ${UPDATE_BRANCH} --title "${TITLE}" --body "Automatic updated of sonar-scanner version value. Needs to be tagged for release."
+            gh pr create -B master -H ${UPDATE_BRANCH} --title "${TITLE}" --body "Automatic updated of sonar-scanner version value. Needs to be tagged for release."
           fi  
 
