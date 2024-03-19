@@ -1,5 +1,6 @@
 name: sonar-scanner version check
 on:
+  workflow_dispatch:
   schedule:
     - cron: '15 10 * * *'
 
