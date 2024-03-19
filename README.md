@@ -1,12 +1,13 @@
 # Scan your code with SonarQube [![Tests](https://github.com/SonarSource/sonarqube-github-c-cpp/actions/workflows/tests.yml/badge.svg)](https://github.com/SonarSource/sonarqube-github-c-cpp/actions/workflows/tests.yml)
 
-Using this GitHub Action, achieve [Clean Code](https://www.sonarsource.com/solutions/clean-code/?utm_medium=referral&utm_source=github&utm_campaign=clean-code&utm_content=sonarqube-scan-action) 
-with [SonarQube](https://www.sonarqube.org/) by scanning to detect Bugs, Vulnerabilities, and Code Smells in C, C++ and Objective-C!
+This SonarSource project, available as a GitHub Action, scans your C, C++, and Objective-C projects with SonarQube, and helps developers produce 
+[Clean Code](https://www.sonarsource.com/solutions/clean-code/?utm_medium=referral&utm_source=github&utm_campaign=clean-code&utm_content=sonarqube-scan-action).
 
 <img alt="The SonarQube logo" src="./images/SonarQube-72px.png">
 
-SonarQube is the leading product for Continuous Code Quality and code Security. 
-It supports most popular programming languages, including Java, JavaScript, TypeScript, C#, Python, C, C++, and many more.
+[SonarQube](https://www.sonarsource.com/products/sonarqube/) is a widely used static analysis solution for continuous code quality and security inspection. 
+It helps developers identify and fix issues in their code that could lead to bugs, vulnerabilities, or decreased development velocity.
+SonarQube supports the most popular programming languages, including Java, JavaScript, TypeScript, C#, Python, C, C++, and [many more](https://www.sonarsource.com/knowledge/languages/).
 
 ## Requirements
 
