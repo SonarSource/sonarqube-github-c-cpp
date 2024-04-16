@@ -96,7 +96,7 @@ env:
   SONAR_ROOT_CERT: ${{ secrets.SONAR_ROOT_CERT }}
 ```
 
-See also [example configurations](https://github.com/sonarsource-cfamily-examples?q=gh-actions-sc&type=all&language=&sort=)
+See also [example configurations](https://github.com/search?q=org%3Asonarsource-cfamily-examples+gh-actions-sq&type=repositories)
 
 ### Secrets and environment variables
 
