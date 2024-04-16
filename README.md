@@ -110,7 +110,7 @@ Environment variables:
 
 ## Do not use this GitHub action if you are in the following situations
 
-* You want to analyze code written in a language other than C, C++ or Objective-C?. Use the [SonarQube Scan GitHub Action](https://github.com/SonarSource/sonarqube-scan-action) instead
+* You want to analyze code that doesn't have C, C++, or Objective-C? Use the [SonarQube Scan GitHub Action](https://github.com/SonarSource/sonarqube-scan-action) instead
 * You want to run the action on a 32-bits system - build wrappers support only 64-bits OS
 
 ## Additional information
