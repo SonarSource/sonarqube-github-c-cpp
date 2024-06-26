@@ -45,7 +45,7 @@ echo "sonar-scanner-dir=${SONAR_SCANNER_DIR}"
 echo "sonar-scanner-bin=${SONAR_SCANNER_DIR}/bin/${SONAR_SCANNER_NAME}"
 
 BUILD_WRAPPER_DIR="${INSTALL_PATH}/build-wrapper-${BUILD_WRAPPER_SUFFIX}"
-echo "build-wrapper-url=${SONAR_HOST_URL}/static/cpp/build-wrapper-${BUILD_WRAPPER_SUFFIX}.zip"
+echo "build-wrapper-url=${SONAR_HOST_URL%/}/static/cpp/build-wrapper-${BUILD_WRAPPER_SUFFIX}.zip"
 echo "build-wrapper-dir=${BUILD_WRAPPER_DIR}"
 echo "build-wrapper-bin=${BUILD_WRAPPER_DIR}/${BUILD_WRAPPER_NAME}"
 
