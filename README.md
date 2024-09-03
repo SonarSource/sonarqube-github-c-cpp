@@ -52,7 +52,7 @@ jobs:
         # Disabling shallow clone is recommended for improving relevancy of reporting
         fetch-depth: 0
     - name: Install sonar-scanner and build-wrapper
-      uses: sonarsource/sonarqube-github-c-cpp@v1
+      uses: sonarsource/sonarqube-github-c-cpp@v2
       env:
         SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         SONAR_ROOT_CERT: ${{ secrets.SONAR_ROOT_CERT }}
@@ -78,7 +78,7 @@ If you are using SonarQube 10.5 or earlier, use `sonar.cfamily.build-wrapper-out
 You can change the `build-wrapper` and `sonar-scanner` installation path by using the optional input `installation-path` like this:
 
 ```yaml
-uses: sonarsource/sonarqube-github-c-cpp@v1
+uses: sonarsource/sonarqube-github-c-cpp@v2
 with:
   installation-path: my/custom/directory/path
 ```
@@ -86,7 +86,7 @@ Also, the absolute paths to the installed build-wrapper and sonar-scanner binari
 
 Moreover, by default the action will cache sonar-scanner installation. However, you can disable caching by using the optional input: `cache-binaries` like this:
 ```yaml
-uses: sonarsource/sonarqube-github-c-cpp@v1
+uses: sonarsource/sonarqube-github-c-cpp@v2
 with:
   cache-binaries: false
 ```
@@ -94,7 +94,7 @@ with:
 If your SonarQube server uses a self-signed certificate, you can pass a root certificate (in PEM format) to the java certificate store:
 
 ```yaml
-uses: sonarsource/sonarqube-github-c-cpp@v1
+uses: sonarsource/sonarqube-github-c-cpp@v2
 env:
   SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
   SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
