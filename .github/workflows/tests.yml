@@ -384,14 +384,14 @@ jobs:
         id: run-action
         uses: ./
         env:
-          SONAR_HOST_URL: 'https://next.sonarqube.com/'
+          SONAR_HOST_URL: 'https://next.sonarqube.com/sonarqube/'
         with:
           cache-binaries: ${{ matrix.cache }}
 
       - name: SONAR_HOST_URL is set
         shell: bash
         run: |
-          [[ $SONAR_HOST_URL == "https://next.sonarqube.com/" ]]
+          [[ $SONAR_HOST_URL == "https://next.sonarqube.com/sonarqube/" ]]
 
       - name: sonar-scanner is installed and in PATH
         run: |
