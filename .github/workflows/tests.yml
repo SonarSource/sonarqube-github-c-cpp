@@ -430,3 +430,42 @@ jobs:
           BINARY: ${{ steps.run-action.outputs.build-wrapper-binary }}
         run: |
           ("$BINARY" || true) | grep "build-wrapper, version "
+
+  analysisWithSslCertificate:
+    name: >
+      Build wrapper download takes into account 'SONAR_ROOT_CERT'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Generate server certificate
+        run: |
+          openssl req \
+            -newkey rsa:4096 \
+            -x509 \
+            -sha256 \
+            -addext "subjectAltName = DNS:localhost" \
+            -days 3650 \
+            -nodes \
+            -out server.crt \
+            -subj "/C=CH/ST=Geneva/L=Geneva/O=Server/OU=Dept" \
+            -keyout server.key
+        working-directory: .github/qa-sq-behind-ngix
+      - name: Start nginx and SonarQube via Docker Compose
+        run: docker compose up -d --wait
+        working-directory: .github/qa-sq-behind-ngix
+      - name: Read correct server certificate 
+        run: |
+          # read server.crt from .github/qa-sq-behind-ngix/ and store into the SONAR_ROOT_CERT_VALID 
+          # environment variable, to be able to read it in the next step
+          {
+            echo 'SONAR_ROOT_CERT_VALID<<=========='
+            cat .github/qa-sq-behind-ngix/server.crt
+            echo ==========
+          } >> $GITHUB_ENV
+      - name: Run action with the correct SSL certificate
+        uses: ./
+        env:
+          SONAR_ROOT_CERT: ${{ env.SONAR_ROOT_CERT_VALID }}
+          SONAR_HOST_URL: https://localhost:4443
