@@ -1,4 +1,4 @@
-# Scan your C, C++, and Objective-C code with SonarQube [![Tests](https://github.com/SonarSource/sonarqube-github-c-cpp/actions/workflows/tests.yml/badge.svg)](https://github.com/SonarSource/sonarqube-github-c-cpp/actions/workflows/tests.yml)
+# Scan your C, C++, and Objective-C code with SonarQube Server [![Tests](https://github.com/SonarSource/sonarqube-github-c-cpp/actions/workflows/tests.yml/badge.svg)](https://github.com/SonarSource/sonarqube-github-c-cpp/actions/workflows/tests.yml)
 
 This SonarSource project, available as a GitHub Action, scans your C, C++, and Objective-C projects with [SonarQube Server](https://www.sonarsource.com/products/sonarqube/).
 
