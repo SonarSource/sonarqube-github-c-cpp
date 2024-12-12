@@ -439,6 +439,11 @@ jobs:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Add ca-certificates-java
+        shell: bash
+        run: |
+          sudo dpkg --purge --force-depends ca-certificates-java
+          sudo apt-get install ca-certificates-java
       - name: Generate server certificate
         run: |
           openssl req \
