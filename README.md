@@ -1,5 +1,23 @@
 # Scan your C, C++, and Objective-C code with SonarQube Server [![Tests](https://github.com/SonarSource/sonarqube-github-c-cpp/actions/workflows/tests.yml/badge.svg)](https://github.com/SonarSource/sonarqube-github-c-cpp/actions/workflows/tests.yml)
 
+> [!WARNING]
+> This action is deprecated and will be removed in a future release.
+>
+> Please use the `sonarqube-scan-action` and its `install-build-wrapper` sub-action instead.
+>
+> More specifically, if the action is used to install both the SonarScanner CLI and the Build Wrapper:
+> - replace `sonarqube-github-c-cpp` with the latest version of `SonarSource/sonarqube-scan-action/install-build-wrapper`
+> - if the step calling the action is named `Install sonar-scanner and build-wrapper`, or something similar, rename it to `Install Build Wrapper`
+> - replace the step calling `sonar-scanner` with a step using `SonarSource/sonarqube-scan-action`
+> - the arguments passed to `sonar-scanner` should be passed to the action via the `args` input parameter
+>
+> If the action is used to install the SonarScanner CLI, and the Build Wrapper is not required:
+> - remove the `sonarqube-github-c-cpp` step altogether
+> - replace the step calling `sonar-scanner` with a step using `SonarSource/sonarqube-scan-action`
+> - the arguments passed to `sonar-scanner` should be passed to the action via the `args` input parameter
+>
+> Check the C++ section in [the README of the `sonarqube-scan-action`](https://github.com/SonarSource/sonarqube-scan-action/?tab=readme-ov-file#server-1) for complete examples.
+
 This SonarSource project, available as a GitHub Action, scans your C, C++, and Objective-C projects with [SonarQube Server](https://www.sonarsource.com/products/sonarqube/).
 
 ![Logo](./images/SQ_Logo_Cloud_Dark_Backgrounds.png#gh-dark-mode-only)
